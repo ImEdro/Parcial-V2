@@ -183,40 +183,5 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
 
         return departamentos;
     }
-    
-    public List<Colmena> findAll3() {
-        List<Colmena> departamentos = null;
-        String query = "Select panales_con_alimento as Kilos FROM Colmena where id_colmena = 1";
-        Connection connection = null;
-        try {
-            connection = Conexion.getConnection();
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(ColmenaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            while (rs.next()) {
-                if (departamentos == null) {
-                    departamentos = new ArrayList<Colmena>();
-                }
-
-                Colmena registro = new Colmena();
-                
-                double valor = rs.getDouble("Kilos");
-                registro.setPaneles_con_alimento((int) valor);
-
-                departamentos.add(registro);
-            }
-            st.close();
-
-        } catch (SQLException e) {
-            System.out.println("Problemas al obtener la lista de Departamentos");
-            e.printStackTrace();
-        }
-
-        return departamentos;
-    }
-    
+        
 }
