@@ -205,7 +205,7 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
                 Colmena registro = new Colmena();
                 
                 double valor = rs.getDouble("Kilos");
-                registro.setKilos_Miel(valor);
+                registro.setPaneles_con_alimento((int) valor);
 
                 departamentos.add(registro);
             }
