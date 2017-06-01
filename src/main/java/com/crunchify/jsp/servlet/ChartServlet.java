@@ -44,9 +44,9 @@ public class ChartServlet extends HttpServlet {
         ArrayList<Colmena> arrayList = (ArrayList<Colmena>) dAO.findAll();
 
         double porcentaje = (3 / 10) * 100;
-        dataset.setValue("colmena 1", porcentaje);
+        dataset.insertValue(1,"colmena 1", porcentaje);
         double otro = 100 - porcentaje;
-        dataset.setValue("otros", otro);
+        dataset.insertValue(2, "otro", otro);
 
         boolean legend = true;
         boolean tooltips = false;
