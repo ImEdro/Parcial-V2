@@ -1,7 +1,7 @@
 package edu.co.sergio.mundo.vo;
 
 public class Colmena {
-    private int paneles_con_alimento;
+    private int paneles_con_alimento=3;
     private double Kilos_Miel;
 
     public int getPaneles_con_alimento() {
