@@ -45,12 +45,9 @@ public class ChartServlet extends HttpServlet {
 
         for (int i = 0; i < arrayList.size(); i++) {
             double porcentaje = (arrayList.get(i).getPaneles_con_alimento() / 10) * 100;
-            if (arrayList.get(i).getPaneles_con_alimento() != 0) {
-                dataset.setValue("colmena 1", porcentaje);
-            } else {
-                double otro =1-porcentaje; 
-                dataset.setValue("otros",otro);
-            }
+            dataset.setValue("colmena 1", porcentaje);
+            dataset.setValue("otros",1-porcentaje);
+            
         }
 
         boolean legend = true;
