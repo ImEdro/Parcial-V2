@@ -52,7 +52,7 @@ public class ChartServlet2 extends HttpServlet {
         ArrayList<Colmena> col = (ArrayList<Colmena>) dAO.findAll2();
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int i = 0; i < col.size(); i++) {
-            dataset.addValue(col.get(i).getKilos_Miel(),"Colmena"+i, "Category 1");
+            dataset.addValue(col.get(i).getKilos_Miel(),"Colmena"+(i+1), "Category 1");
         }
 
         JFreeChart chart = ChartFactory.createBarChart3D(
