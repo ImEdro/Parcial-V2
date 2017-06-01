@@ -43,7 +43,7 @@ public class ChartServlet extends HttpServlet {
         //Crear la capa de servicios que se enlace con el DAO
         ArrayList<Colmena> arrayList = (ArrayList<Colmena>) dAO.findAll();
 
-        int porcentaje = (3 / 10) * 100;
+        int porcentaje = 30;
         dataset.setValue("colmena 1", porcentaje);
         int otro = 100 - porcentaje;
         dataset.setValue("otro", otro);
