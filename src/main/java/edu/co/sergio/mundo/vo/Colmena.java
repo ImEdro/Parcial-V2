@@ -8,8 +8,8 @@ public class Colmena {
         return paneles_con_alimento;
     }
 
-    public void setPaneles_con_alimento(int paneles_con_alimento) {
-        this.paneles_con_alimento = paneles_con_alimento;
+    public void setPaneles_con_alimento(int panales_con_alimento) {
+        this.paneles_con_alimento = panales_con_alimento;
     }
 
   
