@@ -48,7 +48,8 @@ public class ChartServlet extends HttpServlet {
             if (arrayList.get(i).getPaneles_con_alimento() != 0) {
                 dataset.setValue("colmena 1", porcentaje);
             } else {
-                dataset.setValue("otros", 1 - porcentaje);
+                double otro =1-porcentaje; 
+                dataset.setValue("otros",otro);
             }
         }
 

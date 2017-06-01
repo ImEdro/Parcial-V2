@@ -43,7 +43,6 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(query);
             int Autor = 0;
-            double valor = 0;
 
             while (rs.next()) {
                 Colmena registro = new Colmena();
