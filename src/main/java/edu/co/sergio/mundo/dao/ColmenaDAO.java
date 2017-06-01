@@ -42,15 +42,15 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
         try {
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery(query);
-            int Autor = 0;
+            
 
             while (rs.next()) {
                 Colmena registro = new Colmena();
                 if (obras == null) {
                     obras = new ArrayList<Colmena>();
                 }
-                Autor = rs.getInt("panales_con_alimento");
-                registro.setPaneles_con_alimento(Autor);
+                int Autor = rs.getInt("panales_con_alimento");
+                registro.setPaneles_con_alimento(3);
                 obras.add(registro);
             }
             st.close();
