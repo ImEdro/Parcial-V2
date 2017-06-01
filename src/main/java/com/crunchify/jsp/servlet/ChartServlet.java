@@ -37,17 +37,16 @@ public class ChartServlet extends HttpServlet {
     }
 
     public JFreeChart getChart() {
-
-        DefaultPieDataset dataset = new DefaultPieDataset();
         ColmenaDAO dAO = new ColmenaDAO();
         //Crear la capa de servicios que se enlace con el DAO
-        ArrayList<Colmena> col = (ArrayList<Colmena>) dAO.findAll();
+        ArrayList<Colmena> col = (ArrayList<Colmena>) dAO.findAll3();
+        DefaultPieDataset dataset = new DefaultPieDataset();
 
         for (int i = 0; i < col.size(); i++) {
             double porcentaje = (col.get(i).getPaneles_con_alimento() / 10) * 100;
             dataset.setValue("colmena 1", porcentaje);
-            dataset.setValue("otros",100-porcentaje);
-            
+            dataset.setValue("otros", 100 - porcentaje);
+
         }
 
         boolean legend = true;
