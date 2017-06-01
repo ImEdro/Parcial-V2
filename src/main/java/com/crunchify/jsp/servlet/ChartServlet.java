@@ -42,12 +42,12 @@ public class ChartServlet extends HttpServlet {
         ColmenaDAO dAO = new ColmenaDAO();
         //Crear la capa de servicios que se enlace con el DAO
         ArrayList<Colmena> arrayList = (ArrayList<Colmena>) dAO.findAll();
-
+        
         for (int i = 0; i < arrayList.size(); i++) {
             double porcentaje = (arrayList.get(i).getPaneles_con_alimento() / 10) * 100;
             dataset.setValue("colmena 1", porcentaje);
-            dataset.setValue("otros",100-porcentaje);
-            
+            double otro=100-porcentaje;
+            dataset.setValue("otros", otro);
         }
 
         boolean legend = true;
