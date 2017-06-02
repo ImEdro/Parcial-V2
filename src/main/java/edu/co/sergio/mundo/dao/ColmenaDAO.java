@@ -50,7 +50,7 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
                 }
                 
                 int valor = rs.getInt("Alimento");
-                Colmena registro = new Colmena(valor);
+                Colmena registro = new Colmena(3);
                 obras.add(registro);
             }
             st.close();
