@@ -48,9 +48,9 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
                 if (obras == null) {
                     obras = new ArrayList<Colmena>();
                 }
-                Colmena registro = new Colmena();
+                
                 int valor = rs.getInt("Alimento");
-                registro.setPaneles_con_alimento(valor);
+                Colmena registro = new Colmena(valor);
                 obras.add(registro);
             }
             st.close();
