@@ -32,7 +32,7 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
      */
     public List<Colmena> findAll() {
         List<Colmena> obras = null;
-        String query = "Select sum(panales_con_alimento) as Alimento from Colmena where id_colmena = 1";
+        String query = "Select panales_con_alimento from Colmena where id_colmena = 1";
         Connection connection = null;
         try {
             connection = Conexion.getConnection();
@@ -48,9 +48,9 @@ public class ColmenaDAO implements IBaseDatos<Colmena> {
                 if (obras == null) {
                     obras = new ArrayList<Colmena>();
                 }
-                
-                int valor = rs.getInt("Alimento");
-                Colmena registro = new Colmena(3);
+                Colmena registro = new Colmena();
+                int valor = rs.getInt("panales_con_alimento");
+                registro.setPaneles_con_alimento(valor);
                 obras.add(registro);
             }
             st.close();
